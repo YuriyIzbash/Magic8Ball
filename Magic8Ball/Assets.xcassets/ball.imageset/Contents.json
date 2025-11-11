@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "20251111_0946_Ball with Background_remix_01k9s1ecpde7ev5ccw04zak3z8_Nero_AI_Image_Upscaler_Photo.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
