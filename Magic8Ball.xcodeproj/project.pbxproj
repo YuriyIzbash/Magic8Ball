@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5BD583032EC34B170098D76C /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD583022EC34B170098D76C /* Shake.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5BD582EC2EC32C590098D76C /* Magic8Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic8Ball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD583022EC34B170098D76C /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		5BD582E32EC32C590098D76C = {
 			isa = PBXGroup;
 			children = (
+				5BD583022EC34B170098D76C /* Shake.swift */,
 				5BD582EE2EC32C590098D76C /* Magic8Ball */,
 				5BD582ED2EC32C590098D76C /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD583032EC34B170098D76C /* Shake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
