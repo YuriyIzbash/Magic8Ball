@@ -9,17 +9,12 @@ import Foundation
 import CoreMotion
 
 final class ShakeMotionManager: ObservableObject {
-    private let motion = CMMotionManager()
-    private let queue = OperationQueue()
-
-    // Increment this to signal a shake event to SwiftUI.
     @Published var shakeTrigger: Int = 0
 
-    // Debounce to avoid multiple triggers per shake.
+    private let motion = CMMotionManager()
+    private let queue = OperationQueue()
     private var lastShakeDate: Date = .distantPast
     private let debounceInterval: TimeInterval = 0.8
-
-    // Sensitivity threshold. Typical shakes exceed ~1.5–2.0 on userAcceleration magnitude.
     private let threshold: Double = 1.8
 
     func start() {
@@ -28,7 +23,6 @@ final class ShakeMotionManager: ObservableObject {
         motion.startDeviceMotionUpdates(to: queue) { [weak self] motion, _ in
             guard let self, let motion else { return }
 
-            // Use userAcceleration (gravity removed) for reliability.
             let a = motion.userAcceleration
             let magnitude = sqrt(a.x * a.x + a.y * a.y + a.z * a.z)
 
@@ -37,7 +31,7 @@ final class ShakeMotionManager: ObservableObject {
                 if now.timeIntervalSince(self.lastShakeDate) > self.debounceInterval {
                     self.lastShakeDate = now
                     DispatchQueue.main.async {
-                        self.shakeTrigger &+= 1 // wraparound-safe increment
+                        self.shakeTrigger &+= 1
                     }
                 }
             }

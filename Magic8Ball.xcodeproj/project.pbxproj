@@ -43,9 +43,11 @@
 		5BDA05C62EC49C2E00D49198 /* Exceptions for "Magic8Ball" folder in "WatchMagic8Ball Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppTextStyle.swift,
 				Assets.xcassets,
 				Fonts/MagicSchoolOne.ttf,
 				Magic8BallApp.swift,
+				Magic8BallModel.swift,
 				ShakeMotionManager.swift,
 			);
 			target = 5BDA05B32EC49B5600D49198 /* WatchMagic8Ball Watch App */;

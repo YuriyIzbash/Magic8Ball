@@ -13,29 +13,7 @@ struct ContentView: View {
     @State private var showAnswer = false
     @State private var appear = false
     @State private var dissolve = false
-    
-    let answerArray = [
-        "It is certain",
-        "Without a doubt",
-        "You may rely on it",
-        "Yes, definitely",
-        "It is decidedly so",
-        "As I see it, yes",
-        "Most likely",
-        "Outlook good",
-        "Yes",
-        "Signs point to yes",
-        "Reply hazy, try again",
-        "Ask again later",
-        "Better not tell you now",
-        "Cannot predict now",
-        "Concentrate and ask again",
-        "Don’t count on it",
-        "My reply is no",
-        "My sources say no",
-        "Outlook not so good",
-        "Very doubtful"
-    ]
+    @State private var isReady = false
     
     var body: some View {
         Image(.ball)
@@ -46,23 +24,13 @@ struct ContentView: View {
             .overlay(
                 ZStack {
                     Text("Ask")
-                        .font(Font.custom("Magic School One", size: 24))
-                        .foregroundColor(.white)
-                        .frame(width: 100, height: 100)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 30)
-                        .padding(.horizontal, 20)
+                        .magicBallTextStyle(size: 24)
                         .opacity(showAnswer ? 0 : 1)
                         .scaleEffect(showAnswer ? 0.9 : 1.0)
                         .blur(radius: showAnswer ? 6 : 0)
 
                     Text(text)
-                        .font(Font.custom("Magic School One", size: 24))
-                        .foregroundColor(.white)
-                        .frame(width: 100, height: 100)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 30)
-                        .padding(.horizontal, 20)
+                        .magicBallTextStyle(size: 20)
                         .opacity(appear ? (dissolve ? 0 : 1) : 0)
                         .scaleEffect(appear ? (dissolve ? 1.08 : 1.0) : 0.6)
                         .rotation3DEffect(.degrees(appear ? 0 : 30), axis: (x: 1, y: 0, z: 0))
@@ -73,9 +41,19 @@ struct ContentView: View {
             .background(Color.black.frame(width: 200, height: 200))
             .background(Image(.background))
             .padding()
+            .contentShape(Rectangle())
+            .onTapGesture {
+                #if os(watchOS) || targetEnvironment(simulator)
+                // Simulate a shake in watchOS or Simulator for testing
+                if isReady && !showAnswer {
+                    shakeManager.shakeTrigger &+= 1
+                }
+                #endif
+            }
             .onReceive(shakeManager.$shakeTrigger) { _ in
-                // Pick a new answer and run the appear -> wait -> dissolve sequence
-                text = answerArray[Int.random(in: 0..<answerArray.count)]
+                guard isReady && !showAnswer else { return }
+                
+                text = Magic8Ball.randomAnswer()
                 dissolve = false
                 showAnswer = true
                 appear = false
@@ -85,7 +63,7 @@ struct ContentView: View {
                 }
 
                 Task {
-                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    try? await Task.sleep(nanoseconds: 2_000_000_000)
                     withAnimation(.easeOut(duration: 1.2)) {
                         dissolve = true
                     }
@@ -96,8 +74,18 @@ struct ContentView: View {
                     dissolve = false
                 }
             }
-            .onAppear { shakeManager.start() }
-            .onDisappear { shakeManager.stop() }
+            .onAppear {
+                isReady = false
+                Task {
+                    try? await Task.sleep(nanoseconds: 300_000_000)
+                    isReady = true
+                    shakeManager.start()
+                }
+            }
+            .onDisappear {
+                isReady = false
+                shakeManager.stop()
+            }
         
         Text("Shake to see the answer!")
             .foregroundColor(.white)
