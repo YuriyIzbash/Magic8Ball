@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var appear = false
     @State private var dissolve = false
     @State private var isReady = false
+    private let haptics = HapticsManager.shared
     
     var body: some View {
         Image(.ball)
@@ -46,6 +47,7 @@ struct ContentView: View {
                 #if os(watchOS) || targetEnvironment(simulator)
                 // Simulate a shake in watchOS or Simulator for testing
                 if isReady && !showAnswer {
+                    haptics.shakeDetected()
                     shakeManager.shakeTrigger &+= 1
                 }
                 #endif
@@ -56,6 +58,7 @@ struct ContentView: View {
                 text = Magic8Ball.randomAnswer()
                 dissolve = false
                 showAnswer = true
+                haptics.answerRevealed()
                 appear = false
 
                 withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0.2)) {
@@ -67,6 +70,7 @@ struct ContentView: View {
                     withAnimation(.easeOut(duration: 1.2)) {
                         dissolve = true
                     }
+                    haptics.answerDissolve()
                     try? await Task.sleep(nanoseconds: 1_300_000_000)
                     showAnswer = false
                     text = "Ask"
