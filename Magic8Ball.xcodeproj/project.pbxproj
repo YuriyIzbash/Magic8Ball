@@ -6,20 +6,77 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5BDA05BE2EC49B5800D49198 /* WatchMagic8Ball Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BDA05BC2EC49B5800D49198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BD582E42EC32C590098D76C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BDA05B32EC49B5600D49198;
+			remoteInfo = "WatchMagic8Ball Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BDA05BF2EC49B5800D49198 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5BDA05BE2EC49B5800D49198 /* WatchMagic8Ball Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5BD582EC2EC32C590098D76C /* Magic8Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic8Ball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMagic8Ball Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5BDA05C62EC49C2E00D49198 /* Exceptions for "Magic8Ball" folder in "WatchMagic8Ball Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				Fonts/MagicSchoolOne.ttf,
+				Magic8BallApp.swift,
+				ShakeMotionManager.swift,
+			);
+			target = 5BDA05B32EC49B5600D49198 /* WatchMagic8Ball Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5BD582EE2EC32C590098D76C /* Magic8Ball */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5BDA05C62EC49C2E00D49198 /* Exceptions for "Magic8Ball" folder in "WatchMagic8Ball Watch App" target */,
+			);
 			path = Magic8Ball;
+			sourceTree = "<group>";
+		};
+		5BDA05B52EC49B5600D49198 /* WatchMagic8Ball Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WatchMagic8Ball Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5BD582E92EC32C590098D76C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BDA05B12EC49B5600D49198 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD582EE2EC32C590098D76C /* Magic8Ball */,
+				5BDA05B52EC49B5600D49198 /* WatchMagic8Ball Watch App */,
 				5BD582ED2EC32C590098D76C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD582EC2EC32C590098D76C /* Magic8Ball.app */,
+				5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +114,12 @@
 				5BD582E82EC32C590098D76C /* Sources */,
 				5BD582E92EC32C590098D76C /* Frameworks */,
 				5BD582EA2EC32C590098D76C /* Resources */,
+				5BDA05BF2EC49B5800D49198 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5BDA05BD2EC49B5800D49198 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5BD582EE2EC32C590098D76C /* Magic8Ball */,
@@ -68,6 +129,28 @@
 			);
 			productName = Magic8Ball;
 			productReference = 5BD582EC2EC32C590098D76C /* Magic8Ball.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BDA05B32EC49B5600D49198 /* WatchMagic8Ball Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BDA05C22EC49B5800D49198 /* Build configuration list for PBXNativeTarget "WatchMagic8Ball Watch App" */;
+			buildPhases = (
+				5BDA05B02EC49B5600D49198 /* Sources */,
+				5BDA05B12EC49B5600D49198 /* Frameworks */,
+				5BDA05B22EC49B5600D49198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5BDA05B52EC49B5600D49198 /* WatchMagic8Ball Watch App */,
+			);
+			name = "WatchMagic8Ball Watch App";
+			packageProductDependencies = (
+			);
+			productName = "WatchMagic8Ball Watch App";
+			productReference = 5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -81,6 +164,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					5BD582EB2EC32C590098D76C = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					5BDA05B32EC49B5600D49198 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
@@ -100,12 +186,20 @@
 			projectRoot = "";
 			targets = (
 				5BD582EB2EC32C590098D76C /* Magic8Ball */,
+				5BDA05B32EC49B5600D49198 /* WatchMagic8Ball Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5BD582EA2EC32C590098D76C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BDA05B22EC49B5600D49198 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +216,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BDA05B02EC49B5600D49198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BDA05BD2EC49B5800D49198 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BDA05B32EC49B5600D49198 /* WatchMagic8Ball Watch App */;
+			targetProxy = 5BDA05BC2EC49B5800D49198 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5BD582F52EC32C5B0098D76C /* Debug */ = {
@@ -314,6 +423,72 @@
 			};
 			name = Release;
 		};
+		5BDA05C02EC49B5800D49198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WYP88K3VD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMagic8Ball;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.izyum.Magic8Ball;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.izyum.Magic8Ball.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		5BDA05C12EC49B5800D49198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WYP88K3VD6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMagic8Ball;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.izyum.Magic8Ball;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.izyum.Magic8Ball.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +506,15 @@
 			buildConfigurations = (
 				5BD582F82EC32C5B0098D76C /* Debug */,
 				5BD582F92EC32C5B0098D76C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BDA05C22EC49B5800D49198 /* Build configuration list for PBXNativeTarget "WatchMagic8Ball Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BDA05C02EC49B5800D49198 /* Debug */,
+				5BDA05C12EC49B5800D49198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

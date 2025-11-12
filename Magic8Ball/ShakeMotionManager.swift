@@ -1,7 +1,7 @@
 //  ShakeMotionManager.swift
 //  Magic8Ball
 //
-//  A robust, debounced shake detector using Core Motion deviceMotion.userAcceleration.
+//  Created by yuriy on 11. 11. 25.
 //
 
 import Combine
