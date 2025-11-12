@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7E35192EC52290002BE47A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5B7E35182EC52290002BE47A /* README.md */; };
 		5BDA05BE2EC49B5800D49198 /* WatchMagic8Ball Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,11 +36,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B7E35182EC52290002BE47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BD582EC2EC32C590098D76C /* Magic8Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic8Ball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDA05B42EC49B5600D49198 /* WatchMagic8Ball Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMagic8Ball Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5B7E35202EC52380002BE47A /* Exceptions for "Screenshots" folder in "Magic8Ball" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"iphone-1.png",
+				"iphone-2.png",
+				"watch-1.png",
+				"watch-2.png",
+			);
+			target = 5BD582EB2EC32C590098D76C /* Magic8Ball */;
+		};
 		5BDA05C62EC49C2E00D49198 /* Exceptions for "Magic8Ball" folder in "WatchMagic8Ball Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -55,6 +67,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5B7E351B2EC52327002BE47A /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5B7E35202EC52380002BE47A /* Exceptions for "Screenshots" folder in "Magic8Ball" target */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		5BD582EE2EC32C590098D76C /* Magic8Ball */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -91,9 +111,11 @@
 		5BD582E32EC32C590098D76C = {
 			isa = PBXGroup;
 			children = (
+				5B7E351B2EC52327002BE47A /* Screenshots */,
 				5BD582EE2EC32C590098D76C /* Magic8Ball */,
 				5BDA05B52EC49B5600D49198 /* WatchMagic8Ball Watch App */,
 				5BD582ED2EC32C590098D76C /* Products */,
+				5B7E35182EC52290002BE47A /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +146,7 @@
 				5BDA05BD2EC49B5800D49198 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				5B7E351B2EC52327002BE47A /* Screenshots */,
 				5BD582EE2EC32C590098D76C /* Magic8Ball */,
 			);
 			name = Magic8Ball;
@@ -198,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7E35192EC52290002BE47A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
