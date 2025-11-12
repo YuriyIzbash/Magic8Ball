@@ -1,9 +1,9 @@
 // Magic 8 Ball — iPhone + Apple Watch
 
-A delightful, modern SwiftUI take on the classic Magic 8 Ball. Ask a question, shake your device (or tap), and get a whimsical, animated answer. Includes a beautifully integrated Apple Watch companion for quick, on-the-go fortune checks.
+A delightful, modern SwiftUI take on the classic Magic 8 Ball. Ask a question, shake your device, and get a whimsical, animated answer. Includes a beautifully integrated Apple Watch companion for quick, on-the-go fortune checks.
 
 - Platforms: iOS + watchOS
-- Tech: SwiftUI, Swift Concurrency, Haptics, Watch Connectivity (if applicable)
+- Tech: SwiftUI, Swift Concurrency, Haptics, Watch Connectivity
 - Status: Production-ready sample app
 
 ## Contents
@@ -36,8 +36,6 @@ Magic 8 Ball brings a playful experience to your Apple devices with smooth anima
 - Accessibility-friendly (Dynamic Type, VoiceOver labels where applicable)
 
 ## Screenshots
-Replace the image paths below with your actual screenshot file names once added to the repository. A common convention is to store images under an `Assets` or `Screenshots` folder.
-
 - iPhone — Home
 
 ![iPhone Screenshot 1](Screenshots/iphone-1.png "iPhone — Main Screen")
@@ -54,28 +52,23 @@ Replace the image paths below with your actual screenshot file names once added 
 
 ![Apple Watch Screenshot 2](Screenshots/watch-2.png "Apple Watch — Answer State")
 
-Tip: If you prefer reference-style links, you can define them at the bottom of this file.
-
 ## How It Works
 1. User asks a question (silently or aloud — we don’t record anything).
 2. A shake gesture or a tap triggers the answer generation.
 3. The app picks a response from a curated list and animates it into view.
-4. Subtle haptics and sound (if enabled) add tactile feedback.
-5. On Apple Watch, a single tap provides an instant answer with a glanceable layout.
+4. Subtle haptics add tactile feedback.
 
 ## Architecture & Tech
 - SwiftUI for UI on iOS and watchOS
-- State-driven design using `@State` and/or `@Observable` types
-- Swift Concurrency for any async tasks or delays (if present)
+- State-driven design 
+- Swift Concurrency for any async tasks or delays
 - Haptics for tactile feedback on shake/tap
 - Watch app implemented as a companion target
 
-If the project includes shared code between iOS and watchOS, common logic lives in a shared module to minimize duplication.
-
 ## Requirements
 - Xcode 15 or later
-- iOS 17 or later (adjust if your project supports earlier versions)
-- watchOS 10 or later (adjust as needed)
+- iOS 18.5 or later
+- watchOS 11 or later
 
 ## Installation
 - Clone the repository
@@ -89,7 +82,6 @@ If the project includes shared code between iOS and watchOS, common logic lives 
 - All logic runs on-device
 
 ## Testing
-- Unit tests (if included) cover the response generator and state transitions
 - UI previews via SwiftUI `#Preview` macros
 - To add tests: create a new test target and add cases for the response list and triggering logic
 
